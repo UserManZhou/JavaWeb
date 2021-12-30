@@ -62,7 +62,7 @@ public class LoginServlet extends HttpServlet {
                     }
                     System.out.println(userImg.toString());
                     HttpSession session = req.getSession();
-                    req.setAttribute("img_url",userImg.getImg_url());
+                    session.setAttribute("img_url",userImg.getImg_url());
                     session.setAttribute("username",userByPassword.getUsername());
                     req.getRequestDispatcher("/home").forward(req,resp);
                 }

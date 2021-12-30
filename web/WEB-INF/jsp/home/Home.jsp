@@ -34,11 +34,11 @@
 <body>
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
     <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Company name</a>
-    <img src="${ctx}/user_img/${requestScope.img_url}" style="width: 40px;border-radius: 10px" alt="Find Resoucres">
+    <img src="${ctx}/user_img/${sessionScope.img_url}" style="width: 40px;border-radius: 10px" alt="Find Resoucres">
     <h1 class="h6" style="color: wheat;">${sessionScope.username}</h1>
     <div class="navbar-nav">
         <div class="nav-item text-nowrap">
-            <a class="nav-link px-3" href="#">Sign out</a>
+            <a class="nav-link px-3" href="${ctx}/signOut">Sign out</a>
         </div>
     </div>
 </header>
