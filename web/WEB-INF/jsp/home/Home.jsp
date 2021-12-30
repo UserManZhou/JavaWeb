@@ -11,15 +11,10 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="${ctx}/public/css/boostratp.css"/>
     <link rel="stylesheet" type="text/css" href="${ctx}/public/css/boostrap.min.css"/>
-    <link rel="stylesheet"  href="${ctx}/public/font/bootstrap-icons.css"/>
-    <link href="${ctx}/public/css/signin.css" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"> -->
-    <link rel="apple-touch-icon" href="https://getbootstrap.com/docs/5.1/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-    <link rel="icon" href="https://getbootstrap.com/docs/5.1/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="https://getbootstrap.com/docs/5.1/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
     <script src="${ctx}/public/js/bootstrap.bundle.min.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="${ctx}/public/css/dashboard.css"/>
+    <link rel="stylesheet" type="text/css" href="${ctx}/public/font/bootstrap-icons.css"/>
 </head>
 <style>
     .bd-placeholder-img {
@@ -36,25 +31,229 @@
         }
     }
 </style>
-<body  class="text-center">
-<main class="form-signin">
-    <form>
-        <img class="mb-4" src="https://getbootstrap.com/docs/5.1/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-        <h1 class="h3 mb-3 fw-normal">Please Register in</h1>
-        <div class="form-floating">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">Email address</label>
+<body>
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Company name</a>
+    <img src="${ctx}/user_img/${requestScope.img_url}" style="width: 40px;border-radius: 10px" alt="Find Resoucres">
+    <h1 class="h6" style="color: wheat;">${sessionScope.username}</h1>
+    <div class="navbar-nav">
+        <div class="nav-item text-nowrap">
+            <a class="nav-link px-3" href="#">Sign out</a>
         </div>
-        <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Password</label>
-        </div>
+    </div>
+</header>
 
-        <div class="checkbox mb-3">
-        </div>
-        <button class="w-100 btn btn-lg btn-primary" type="submit">Register in</button>
-        <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
-    </form>
-</main>
+<div class="container-fluid">
+    <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <div class="position-sticky pt-3">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">
+                            Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="file"></span>
+                            Orders
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="shopping-cart"></span>
+                            Products
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="users"></span>
+                            Customers
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="bar-chart-2"></span>
+                            Reports
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="layers"></span>
+                            Integrations
+                        </a>
+                    </li>
+                </ul>
+
+                <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                    <span>Saved reports</span>
+                    <a class="link-secondary" href="#" aria-label="Add a new report">
+                        <span data-feather="plus-circle"></span>
+                    </a>
+                </h6>
+                <ul class="nav flex-column mb-2">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="file-text"></span>
+                            Current month
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="file-text"></span>
+                            Last quarter
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="file-text"></span>
+                            Social engagement
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            <span data-feather="file-text"></span>
+                            Year-end sale
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <h2>Section title</h2>
+            <div class="table-responsive">
+                <table class="table table-striped table-sm">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Header</th>
+                        <th scope="col">Header</th>
+                        <th scope="col">Header</th>
+                        <th scope="col">Header</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1,001</td>
+                        <td>random</td>
+                        <td>data</td>
+                        <td>placeholder</td>
+                        <td>text</td>
+                    </tr>
+                    <tr>
+                        <td>1,002</td>
+                        <td>placeholder</td>
+                        <td>irrelevant</td>
+                        <td>visual</td>
+                        <td>layout</td>
+                    </tr>
+                    <tr>
+                        <td>1,003</td>
+                        <td>data</td>
+                        <td>rich</td>
+                        <td>dashboard</td>
+                        <td>tabular</td>
+                    </tr>
+                    <tr>
+                        <td>1,003</td>
+                        <td>information</td>
+                        <td>placeholder</td>
+                        <td>illustrative</td>
+                        <td>data</td>
+                    </tr>
+                    <tr>
+                        <td>1,004</td>
+                        <td>text</td>
+                        <td>random</td>
+                        <td>layout</td>
+                        <td>dashboard</td>
+                    </tr>
+                    <tr>
+                        <td>1,005</td>
+                        <td>dashboard</td>
+                        <td>irrelevant</td>
+                        <td>text</td>
+                        <td>placeholder</td>
+                    </tr>
+                    <tr>
+                        <td>1,006</td>
+                        <td>dashboard</td>
+                        <td>illustrative</td>
+                        <td>rich</td>
+                        <td>data</td>
+                    </tr>
+                    <tr>
+                        <td>1,007</td>
+                        <td>placeholder</td>
+                        <td>tabular</td>
+                        <td>information</td>
+                        <td>irrelevant</td>
+                    </tr>
+                    <tr>
+                        <td>1,008</td>
+                        <td>random</td>
+                        <td>data</td>
+                        <td>placeholder</td>
+                        <td>text</td>
+                    </tr>
+                    <tr>
+                        <td>1,009</td>
+                        <td>placeholder</td>
+                        <td>irrelevant</td>
+                        <td>visual</td>
+                        <td>layout</td>
+                    </tr>
+                    <tr>
+                        <td>1,010</td>
+                        <td>data</td>
+                        <td>rich</td>
+                        <td>dashboard</td>
+                        <td>tabular</td>
+                    </tr>
+                    <tr>
+                        <td>1,011</td>
+                        <td>information</td>
+                        <td>placeholder</td>
+                        <td>illustrative</td>
+                        <td>data</td>
+                    </tr>
+                    <tr>
+                        <td>1,012</td>
+                        <td>text</td>
+                        <td>placeholder</td>
+                        <td>layout</td>
+                        <td>dashboard</td>
+                    </tr>
+                    <tr>
+                        <td>1,013</td>
+                        <td>dashboard</td>
+                        <td>irrelevant</td>
+                        <td>text</td>
+                        <td>visual</td>
+                    </tr>
+                    <tr>
+                        <td>1,014</td>
+                        <td>dashboard</td>
+                        <td>illustrative</td>
+                        <td>rich</td>
+                        <td>data</td>
+                    </tr>
+                    <tr>
+                        <td>1,015</td>
+                        <td>random</td>
+                        <td>tabular</td>
+                        <td>information</td>
+                        <td>text</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+        </main>
+    </div>
+</div>
+
 </body>
 </html>

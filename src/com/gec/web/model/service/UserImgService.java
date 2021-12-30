@@ -8,4 +8,6 @@ public interface UserImgService {
 
     public void insertUserAndImg(UserImg userImg) throws SQLException;
 
+    public UserImg searchByUserImg(UserImg userImg) throws SQLException;
+
 }

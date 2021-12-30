@@ -9,4 +9,6 @@ public interface UserService {
     public void inserUser(User user) throws SQLException;
 
     public int lastInsertUser() throws SQLException;
+
+    public User findUserByPassword(User user) throws SQLException;
 }

@@ -29,4 +29,12 @@ public class UserImg {
                 ", img_url='" + img_url + '\'' +
                 '}';
     }
+
+    public UserImg(int user_id, String img_url) {
+        this.user_id = user_id;
+        this.img_url = img_url;
+    }
+
+    public UserImg() {
+    }
 }

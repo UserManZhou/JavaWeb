@@ -38,4 +38,20 @@ public class UserServiceImpl implements UserService {
         JDBCUtil.close(connection,preparedStatement,resultSet);
         return i;
     }
+
+    @Override
+    public User findUserByPassword(User user) throws SQLException {
+        User users = new User();
+        String sql = "SELECT id,username FROM `user` WHERE `password`=? AND `accement_num` = ?";
+        Connection connection = JDBCUtil.getConnection();
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setString(1,user.getPassword());
+        preparedStatement.setString(2,user.getAccement_name());
+        ResultSet resultSet = preparedStatement.executeQuery();
+        while (resultSet.next()){
+            users.setId(resultSet.getInt("id"));
+            users.setUsername( resultSet.getString("username"));
+        }
+        return users;
+    }
 }
